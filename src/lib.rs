@@ -897,10 +897,7 @@ pub struct ExternRef {
 
 impl ExternRef {
     /// Creates a new [`ExternRef`] wrapping the given value.
-    pub fn new<T: 'static + Send + Sync, C: AsContextMut>(
-        mut ctx: C,
-        object: T,
-    ) -> Self {
+    pub fn new<T: 'static + Send + Sync, C: AsContextMut>(mut ctx: C, object: T) -> Self {
         Self {
             extern_ref: BackendObject::new(
                 <<C::Engine as WasmEngine>::ExternRef as WasmExternRef<C::Engine>>::new(

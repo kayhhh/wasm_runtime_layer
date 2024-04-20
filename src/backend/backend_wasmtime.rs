@@ -23,10 +23,7 @@ impl WasmEngine for wasmtime::Engine {
 }
 
 impl WasmExternRef<wasmtime::Engine> for wasmtime::ExternRef {
-    fn new<T: 'static + Send + Sync>(
-        _: impl AsContextMut<wasmtime::Engine>,
-        object: T,
-    ) -> Self {
+    fn new<T: 'static + Send + Sync>(_: impl AsContextMut<wasmtime::Engine>, object: T) -> Self {
         Self::new::<T>(object)
     }
 
