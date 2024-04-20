@@ -37,7 +37,7 @@ let add_one = instance
     .unwrap()
     .into_func()
     .unwrap();
-        
+
 let mut result = [Value::I32(0)];
 add_one
     .call(&mut store, &[Value::I32(42)], &mut result)
@@ -72,11 +72,12 @@ To test a single backend:
 cargo test --tests --features backend_wasmi
 ```
 
-For the *wasm32* target, you can use the slower interpreter *wasmi*, or the native JIT accelerated browser backend.
+For the _wasm32_ target, you can use the slower interpreter _wasmi_, or the native JIT accelerated browser backend.
 
 To test the backends, you need to install [`wasm-pack`](https://github.com/rustwasm/wasm-pack).
 
 You can then run:
+
 ```sh
 wasm-pack test --node --features backend_wasmi,backend_web
 ```
