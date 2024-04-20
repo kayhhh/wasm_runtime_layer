@@ -29,7 +29,6 @@ wat = "1.0"
 wasm-bindgen-test = "0.3"
 
 [features]
-default = [ "backend_wasmtime" ]
 backend_wasmi = [ "wasmi" ]
 backend_wasmtime = [ "wasmtime" ]
 backend_web = [ "wasm-bindgen", "js-sys", "slab", "wasmparser" ]
